@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حاسبة الزكاة</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body dir="rtl">
+    <div class="calculator-container">
+      <h1 style="text-align: center">حاسبة الزكاة</h1>
+      <h1>
+        الحمد لله وحده، والصلاة والسلام على من لا نبي بعده وعلى آله وصحبه، أما
+        بعد:
+      </h1>
+      <p>
+        فإن الباعث لكتابة هذه الكلمة هو النصح والتذكير بفريضة الزكاة، التي تساهل
+        بها الكثير من المسلمين فلم يخرجوها على الوجه المشروع مع عظم شأنها،
+        وكونها أحد أركان الإسلام الخمسة،<br />
+        التي لا يستقيم بناؤه إلا عليها؛ لقول النبي ﷺ: بني الإسلام على خمس: شهادة
+        أن لا إله إلا الله وأن محمدًا رسول الله، وإقام الصلاة، و<b
+          >إيتاء الزكاة،
+        </b>
+        وصوم رمضان، وحج البيت
+      </p>
+      <div class="TotalMoneyBox">
+        <div class="input-group">
+          <input
+            type="number"
+            id="TotalMoney"
+            placeholder="أدخل إجمالي المال"
+          />
+          <button class="bn632-hover bn19" onclick="calculateZakat()">
+            احسب الزكاة
+          </button>
+        </div>
+
+        <div id="result"></div>
+      </div>
+    </div>
+    <br />
+    <script src="script.js"></script>
+  </body>
+</html>

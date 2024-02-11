@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.calculator-container {
+  text-align: right;
+  background-color: #ffffffb1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%; /* Limit the width to 90% of the viewport */
+  margin: 0 auto; /* Center the container horizontally */
+}
+p {
+  font-size: x-large;
+}
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+input[type="number"] {
+  flex: 1; /* Take up remaining space */
+  padding: 10px;
+  width: 50px;
+  font-size: larger;
+  border-radius: 5px;
+  border: 1px solid gold;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Add spacing between input and button */
+}
+#TotalMoney {
+  height: 40px;
+}
+
+.bn632-hover {
+  width: 160px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  margin-right: 30px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn19 {
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e4dc03,
+    #fadc71,
+    #e88b19
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+#result {
+  font-family: Arial, sans-serif;
+  background-color: rgba(255, 217, 0, 0.765);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  max-width: 100%;
+  overflow: auto;
+  text-align: center;
+}
