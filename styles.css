@@ -1,42 +1,55 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("background.png");
   background-size: cover;
   background-position: center;
 }
-
+h2 {
+  text-align: center;
+}
 .calculator-container {
   text-align: right;
   background-color: #ffffffb1;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 90%; /* Limit the width to 90% of the viewport */
-  margin: 0 auto; /* Center the container horizontally */
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: large;
 }
-p {
-  font-size: x-large;
+.TotalMoneyBox {
+  background-color: #ffffff61;
 }
+.TotalGoldBox {
+  background-color: #ffffff61;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: 30px auto;
+}
+
 .input-group {
-  margin-bottom: 20px;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  align-items: center;
+}
+
+.label {
+  flex: 1;
+  text-align: right;
 }
 
 input[type="number"] {
-  flex: 1; /* Take up remaining space */
+  flex: 2;
   padding: 10px;
   width: 50px;
   font-size: larger;
   border-radius: 5px;
   border: 1px solid gold;
   box-sizing: border-box;
-  margin-bottom: 10px; /* Add spacing between input and button */
-}
-#TotalMoney {
-  height: 40px;
+  margin-bottom: 10px;
 }
 
 .bn632-hover {
@@ -56,7 +69,10 @@ input[type="number"] {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-
+.left {
+  float: left;
+  margin-right: 10px;
+}
 .bn632-hover:hover {
   background-position: 100% 0;
   moz-transition: all 0.4s ease-in-out;
@@ -79,16 +95,83 @@ input[type="number"] {
   );
   box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
 }
-
 #result {
   font-family: Arial, sans-serif;
   background-color: rgba(255, 217, 0, 0.765);
-  padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transition: opacity 0.5s ease;
-  max-width: 100%;
-  overflow: auto;
+  transition: opacity 1.5s ease;
+  max-width: 90%;
+  margin: 0px auto;
   text-align: center;
+  font-size: 22px;
+}
+#goldResult {
+  font-family: Arial, sans-serif;
+  background-color: rgba(255, 217, 0, 0.765);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 5px;
+  text-align: center;
+  font-size: 22px;
+}
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 2px solid gold;
+  position: relative;
+  margin: 0 auto;
+  animation: rotation 2s ease-in-out infinite alternate;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 70px;
+  height: 70px;
+  border: 2px solid gold;
+  position: absolute;
+  animation: rotation 2s ease-in-out infinite alternate;
+}
+.loader::after {
+  border-color: #ff3d00;
+  animation-direction: alternate-reverse;
+}
+
+.loaderText {
+  text-align: center;
+}
+
+@keyframes rotation {
+  10% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(500deg); /* Rotate a full circle */
+  }
 }
