@@ -66,7 +66,7 @@ input[type="number"] {
 }
 .bn632-hover {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 160px;
+  width: auto;
   margin: 0 auto;
   font-size: 25px;
   font-weight: 600;
