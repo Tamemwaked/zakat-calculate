@@ -1,65 +1,104 @@
-const nisab = 18275;
-
+const nisap = 18275;
+const Goldnisap = 85;
 function calculateZakat() {
-  const TotalMoney = parseFloat(document.getElementById("TotalMoney").value);
+  const totalMoney =
+    parseFloat(document.getElementById("TotalMoney").value) || 0;
+  const goldPrice =
+    parseFloat(document.getElementById("goldPrice").value) || 237;
+  const goldWeight24 =
+    parseFloat(document.getElementById("goldWeight24").value) || 0;
+  const goldWeight22 =
+    parseFloat(document.getElementById("goldWeight22").value) || 0;
+  const goldWeight21 =
+    parseFloat(document.getElementById("goldWeight21").value) || 0;
+  const goldWeight18 =
+    parseFloat(document.getElementById("goldWeight18").value) || 0;
   const resultElement = document.getElementById("result");
 
-  if (isNaN(TotalMoney)) {
-    resultElement.innerHTML = "من فضلك أدخل إجمالي المال";
-    resultElement.style.opacity = 1;
-    return;
-  }
+  const totalGoldGrams = calculateTotalGoldGrams(
+    goldWeight24,
+    goldWeight22,
+    goldWeight21,
+    goldWeight18
+  );
 
-  let zakatAmount = 0;
-  if (TotalMoney >= nisab) {
-    zakatAmount = TotalMoney * 0.025;
-    const formattedZakatAmount = zakatAmount.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-    resultElement.innerHTML = `  قيمة الزكاة ₪   ${formattedZakatAmount}`;
-    resultElement.style.opacity = 1;
+  if (totalMoney > 0 && totalGoldGrams > 0) {
+    calculateZakatForMoneyAndGold(
+      totalMoney,
+      totalGoldGrams,
+      goldPrice,
+      resultElement
+    );
+  } else if (totalMoney > 0) {
+    calculateZakatForMoney(totalMoney, resultElement);
+  } else if (totalGoldGrams > 0) {
+    calculateZakatForGold(totalGoldGrams, goldPrice, resultElement);
   } else {
-    resultElement.innerHTML = "<h2>لا زكاة عليك</h2>";
-    resultElement.style.opacity = 1;
+    showInputPrompt(resultElement);
   }
 }
-function calculateGoldZakat() {
-  const goldNisab = 85;
-  const goldResult = document.getElementById("goldResult");
-  const goldPrice =
-    parseFloat(document.getElementById("goldPrice").value) || 234;
-  let TotalGrams =
-    parseFloat(document.getElementById("goldWeight24").value) || 0;
-  TotalGrams +=
-    ((parseFloat(document.getElementById("goldWeight22").value) || 0) * 22) /
-    24;
 
-  TotalGrams +=
-    ((parseFloat(document.getElementById("goldWeight21").value) || 0) * 21) /
-    24;
-
-  TotalGrams +=
-    ((parseFloat(document.getElementById("goldWeight18").value) || 0) * 18) /
-    24;
-  console.log(TotalGrams);
-  let TotalZakat = 0;
-
-  if (TotalGrams >= goldNisab) {
-    TotalZakat = (TotalGrams * goldPrice * 0.025).toFixed(2);
-  }
-
-  if (TotalGrams == 0) {
-    goldResult.innerHTML = "من فضلك أدخل وزن الذهب";
-    goldResult.style.opacity = 1;
-    return;
-  }
-
-  goldResult.innerHTML = TotalZakat
-    ? `<p>قيمة الزكاة: ₪${TotalZakat}</p>`
-    : "<p>لا زكاة عليك</p>";
-  goldResult.style.opacity = 1;
+function calculateTotalGoldGrams(weight24, weight22, weight21, weight18) {
+  return (
+    weight24 +
+    (weight22 * 22) / 24 +
+    (weight21 * 21) / 24 +
+    (weight18 * 18) / 24
+  );
 }
+
+function calculateZakatForMoneyAndGold(
+  money,
+  goldGrams,
+  goldPrice,
+  resultElement
+) {
+  const totalCombinedWealth = money + goldGrams * goldPrice;
+  if (totalCombinedWealth >= nisap) {
+    const zakatAmount = totalCombinedWealth * 0.025;
+    showZakatResult(zakatAmount, resultElement);
+  } else {
+    showNoZakat(resultElement);
+  }
+}
+
+function calculateZakatForMoney(money, resultElement) {
+  if (money >= nisap) {
+    const zakatAmount = money * 0.025;
+    showZakatResult(zakatAmount, resultElement);
+  } else {
+    showNoZakat(resultElement);
+  }
+}
+
+function calculateZakatForGold(goldGrams, goldPrice, resultElement) {
+  if (goldGrams >= Goldnisap) {
+    const zakatAmount = goldGrams * goldPrice * 0.025;
+    showZakatResult(zakatAmount, resultElement);
+  } else {
+    showNoZakat(resultElement);
+  }
+}
+
+function showZakatResult(zakatAmount, resultElement) {
+  const formattedZakatAmount = zakatAmount.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+  resultElement.innerHTML = `  قيمة الزكاة ₪   ${formattedZakatAmount}`;
+  resultElement.style.opacity = 1;
+}
+
+function showNoZakat(resultElement) {
+  resultElement.innerHTML = "لا زكاة عليك";
+  resultElement.style.opacity = 1;
+}
+
+function showInputPrompt(resultElement) {
+  resultElement.innerHTML = "من فضلك أدخل إجمالي المال أو وزن الذهب";
+  resultElement.style.opacity = 1;
+}
+
 setTimeout(function () {
   document.getElementById("loader-wrapper").style.display = "none";
 }, 4000);

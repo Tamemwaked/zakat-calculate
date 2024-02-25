@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>حاسبة الزكاة</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Schoolbell&v1"
+      rel="stylesheet"
+    />
   </head>
 
   <body dir="rtl">
@@ -13,26 +17,36 @@
         <span class="loader"></span>
       </div>
       <div class="loaderText">
-        <h3>تَطْوير تميم واكد</h3>
+        <h3 style="font-size: x-large">AHKAM software</h3>
       </div>
     </div>
 
     <div class="calculator-container">
-      <h1 style="text-align: center">حاسبة الزكاة</h1>
-      <h3>
+      <h1
+        style="
+          text-align: center;
+          color: rgb(246, 209, 0);
+          text-shadow: 2px 2px black;
+        "
+      >
+        حاسبة الزكاة
+      </h1>
+      <h2 style="text-align: right; font-size: large">
         الحمد لله وحده، والصلاة والسلام على من لا نبي بعده وعلى آله وصحبه، أما
         بعد:
-      </h3>
+      </h2>
       <p>
         أركان الإسلام خمسة وهي؛ شهادة ألَّا إله إلا الله وأن محمداً رسول الله،
-        وإقامة الصلاة، و<b>إيتاء الزكاة</b>، وصوم شهر رمضان، والحج لما اِستطاع
-        .إليه سبيلا. ومن الواجب على كل مسلم أن يلتزم بهذه الأركان الخمسة.
-        <b>الزكاة</b>
-        هي الركن الثالث من أركان الإسلام الذي يأمر الإنسان <b>بالتصدق</b>
+        وإقامة الصلاة، و<b style="text-shadow: 2px 2px gold">إيتاء الزكاة</b>،
+        وصوم شهر رمضان، والحج لما اِستطاع .إليه سبيلا. ومن الواجب على كل مسلم أن
+        يلتزم بهذه الأركان الخمسة.
+        <b style="text-shadow: 2px 2px gold">الزكاة</b>
+        هي الركن الثالث من أركان الإسلام الذي يأمر الإنسان
+        <b style="text-shadow: 2px 2px gold">بالتصدق</b>
         وإعطاء جزء من المال للفقراء والمحتاجين.
       </p>
       <div class="shorotZakat">
-        <h3>شروط وجوب الزكاة</h3>
+        <h2 style="text-align: right; font-size: large">شروط وجوب الزكاة</h2>
         <ul>
           <li>الإسلام: لا تجب الزكاة إلا على المسلم.</li>
           <li>الحلال: لابد أن يكون المال حلالاً.</li>
@@ -46,6 +60,11 @@
           </li>
           <li>أن لا يكون على المال دين.</li>
         </ul>
+        <p>
+          تنويه : اذا كنت صاحب مصلحة تجارية<br />
+          اضف <b style="text-shadow: 2px 2px gold">عروض التجارة</b> الى اجمالي
+          المال
+        </p>
       </div>
       <div class="TotalMoneyBox">
         <h2>زكاة المال</h2>
@@ -54,19 +73,18 @@
             type="number"
             id="TotalMoney"
             placeholder="أدخل إجمالي المال"
+            style="text-align: center"
+            inputmode="numeric"
           />
-          <button class="bn632-hover bn19" onclick="calculateZakat()">
-            احسب الزكاة
-          </button>
         </div>
-        <h2 id="result"></h2>
       </div>
       <div class="shorotZakatGold">
-        <h3>شروط وجوب الزكاة في الذهب</h3>
+        <h2 style="text-align: right; font-size: large">
+          شروط وجوب الزكاة في الذهب
+        </h2>
         <ul>
           <li>
-            أن يبلغ النصاب,النصاب هو قيمة الحد الأدنى الذي إذا مرَّ عليه عام
-            كامل
+            أن يبلغ النصاب وهو قيمة الحد الأدنى الذي إذا مرَّ عليه عام كامل
           </li>
           <li>أن يحول عليه الحول وهي عام كامل.</li>
           <li>الملكية التامة، وأن تعود لمسلم حر.</li>
@@ -77,33 +95,64 @@
         <h2>زكاة الذهب</h2>
         <div class="input-group">
           <label for="goldPrice">سعر الذهب للجرام (₪)</label>
-          <input type="number" id="goldPrice" placeholder="234" />
+          <input
+            type="number"
+            id="goldPrice"
+            inputmode="numeric"
+            placeholder="237"
+          />
         </div>
-        <h3>ادخل كم تملك من الذهب بالجرامات</h3>
+        <h2 style="text-align: right; font-size: medium">
+          ادخل كم تملك من الذهب بالجرامات
+        </h2>
         <div class="input-group">
-          <label for="goldWeight24">وزن الذهب عيار 24 (جرام)</label>
-          <input type="number" id="goldWeight24" placeholder="الوزن بالجرام" />
+          <label for="goldWeight24">وزن الذهب عيار 24 </label>
+          <input
+            type="number"
+            id="goldWeight24"
+            inputmode="numeric"
+            placeholder="الوزن بالجرام"
+          />
         </div>
         <div class="input-group">
-          <label for="goldWeight22">وزن الذهب عيار 22 (جرام)</label>
-          <input type="number" id="goldWeight22" placeholder="الوزن بالجرام" />
+          <label for="goldWeight22">وزن الذهب عيار 22 </label>
+          <input
+            type="number"
+            id="goldWeight22"
+            inputmode="numeric"
+            placeholder="الوزن بالجرام"
+          />
         </div>
         <div class="input-group">
-          <label for="goldWeight21">وزن الذهب عيار 21 (جرام)</label>
-          <input type="number" id="goldWeight21" placeholder="الوزن بالجرام" />
+          <label for="goldWeight21">وزن الذهب عيار 21 </label>
+          <input
+            type="number"
+            id="goldWeight21"
+            inputmode="numeric"
+            placeholder="الوزن بالجرام"
+          />
         </div>
         <div class="input-group">
-          <label for="goldWeight18">وزن الذهب عيار 18 (جرام)</label>
-          <input type="number" id="goldWeight18" placeholder="الوزن بالجرام" />
+          <label for="goldWeight18">وزن الذهب عيار 18 </label>
+          <input
+            type="number"
+            id="goldWeight18"
+            inputmode="numeric"
+            placeholder="الوزن بالجرام"
+          />
         </div>
-        <button class="bn632-hover bn19 left" onclick="calculateGoldZakat()">
+        <br />
+      </div>
+
+      <div class="result-container">
+        <button class="bn632-hover bn19" onclick="calculateZakat()">
           احسب الزكاة
         </button>
-        <br />
-        <h2 id="goldResult"></h2>
+
+        <h2 id="result"></h2>
       </div>
     </div>
-    <br />
+
     <script src="script.js"></script>
   </body>
 </html>

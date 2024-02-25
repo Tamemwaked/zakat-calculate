@@ -6,12 +6,18 @@ body {
   background-size: cover;
   background-position: center;
 }
+h3 {
+  font-family: "Schoolbell", arial, serif;
+}
+
 h2 {
   text-align: center;
+  color: black;
+  text-shadow: 2px 2px gold;
 }
 .calculator-container {
   text-align: right;
-  background-color: #ffffffb1;
+  background-color: #ffffff69;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,15 +26,18 @@ h2 {
   font-size: large;
 }
 .TotalMoneyBox {
-  background-color: #ffffff61;
+  background-color: #ffffff67;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }
 .TotalGoldBox {
-  background-color: #ffffff61;
+  background-color: #ffffff67;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 90%;
   margin: 30px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .input-group {
@@ -42,24 +51,28 @@ h2 {
 }
 
 input[type="number"] {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   flex: 2;
   padding: 10px;
   width: 50px;
-  font-size: larger;
+  font-size: large;
   border-radius: 5px;
   border: 1px solid gold;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin: 10px;
 }
-
+.result-container {
+  text-align: center;
+}
 .bn632-hover {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 160px;
-  font-size: 20px;
+  margin: 0 auto;
+  font-size: 25px;
   font-weight: 600;
   color: #000000;
   cursor: pointer;
-  margin-right: 30px;
-  height: 35px;
+  height: 45px;
   text-align: center;
   border: none;
   background-size: 300% 100%;
@@ -69,10 +82,7 @@ input[type="number"] {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.left {
-  float: left;
-  margin-right: 10px;
-}
+
 .bn632-hover:hover {
   background-position: 100% 0;
   moz-transition: all 0.4s ease-in-out;
@@ -96,30 +106,20 @@ input[type="number"] {
   box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
 }
 #result {
-  font-family: Arial, sans-serif;
   background-color: rgba(255, 217, 0, 0.765);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: opacity 1.5s ease;
   max-width: 90%;
-  margin: 0px auto;
+  margin: 20px auto;
   text-align: center;
-  font-size: 22px;
-}
-#goldResult {
-  font-family: Arial, sans-serif;
-  background-color: rgba(255, 217, 0, 0.765);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: opacity 1.5s ease;
-  max-width: 90%;
-  margin: 30px auto;
+  font-size: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 5px;
-  text-align: center;
-  font-size: 22px;
+  font-weight: 600;
 }
+
 #loader-wrapper {
   position: fixed;
   top: 0;
