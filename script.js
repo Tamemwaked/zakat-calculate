@@ -1,10 +1,10 @@
-const nisap = 18275;
+const nisap = 20000;
 const Goldnisap = 85;
 function calculateZakat() {
   const totalMoney =
     parseFloat(document.getElementById("TotalMoney").value) || 0;
   const goldPrice =
-    parseFloat(document.getElementById("goldPrice").value) || 237;
+    parseFloat(document.getElementById("goldPrice").value) || 235;
   const goldWeight24 =
     parseFloat(document.getElementById("goldWeight24").value) || 0;
   const goldWeight22 =

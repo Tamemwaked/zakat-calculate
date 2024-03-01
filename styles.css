@@ -7,8 +7,9 @@ body {
   background-position: center;
   font-weight: bolder;
 }
+
 h3 {
-  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
 }
@@ -20,7 +21,7 @@ h2 {
 }
 .calculator-container {
   text-align: right;
-  background-color: #ffffff69;
+  background-color: #ffffff93;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,7 +30,7 @@ h2 {
   font-size: large;
 }
 .TotalMoneyBox {
-  background-color: #ffffff67;
+  background-color: #ffffff7b;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   margin: 30px auto;
